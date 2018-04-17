@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block custom_css %}
+   <link rel="stylesheet" href="/static/css/be_playing.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+{#    <div class="mdui-container doc-container doc-no-cover" style="width:100%; padding:0;">#}
+{#    <ul id="musicListUl" class="mdui-list music-ul" style="padding:0 5px;"></ul>#}
+{#    </div>#}
+
+    <div class="aplayer-wrap">
+    <div id="aplayer1" class="aplayer aplayer-withlrc aplayer-withlist">
+    </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+    <script>
+    const ap1 = new APlayer({
+        container: document.getElementById('aplayer1'),
+        listFolded: false,
+        listMaxHeight: '90px',
+        lrcType: 3,
+        audio: [
+            {
+                name: '你很忙1',
+                artist: 'A-Lin1',
+                url: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.mp3',
+                cover: '/static/images/01.jpg',
+                lrc: 'static/lrc/大壮-我们不一样.lrc',
+
+            },
+            {
+                name: 'name2',
+                artist: 'artist2',
+                url: 'https://moeplayer.b0.upaiyun.com/aplayer/hikarunara.mp3',
+                cover: 'cover2.jpg',
+                lrc: 'lrc2.lrc',
+                theme: '#46718b'
+            }
+      ]
+    });
+</script>
+{% endblock %}
